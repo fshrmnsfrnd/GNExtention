@@ -37,7 +37,7 @@
       "suggested_key": {
         "default": "Alt+U"
       },
-      "description": "Set text bold"
+      "description": "Set text underlined"
     }
   },
   "action": {
