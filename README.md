@@ -1,0 +1,2 @@
+# GNExtention
+ Shortcuts for GoodNotes

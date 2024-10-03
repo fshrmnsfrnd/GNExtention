@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Goodnotes Shortcuts",
+    "version": "1.0",
+    "permissions": [
+      "activeTab", 
+      "scripting"
+    ],
+    "content_scripts": [
+    {
+      "matches": ["<all_urls>"],  
+      "js": ["background.js"]
+    }],
+    "commands": {
+      "UnSetBold": {
+        "suggested_key": {
+          "default": "Alt+B"
+        },
+        "description": "Gives Goodnotes Web more Keyboard Shortcuts"
+      }
+    },
+    "action": {
+      "default_popup": "popup/popup.html"
+    },
+    "web_accessible_resources": [
+      {
+          "resources": ["images/*.jpeg"],
+          "matches": ["<all_urls>"]
+      }
+    ]
+  }
