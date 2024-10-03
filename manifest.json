@@ -1,31 +1,56 @@
 {
-    "manifest_version": 3,
-    "name": "Goodnotes Shortcuts",
-    "version": "1.0",
-    "permissions": [
-      "activeTab", 
-      "scripting"
-    ],
-    "content_scripts": [
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Goodnotes Shortcuts",
+  "description": "Gives Goodnotes Web more Keyboard Shortcuts",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
     {
-      "matches": ["<all_urls>"],  
-      "js": ["background.js"]
-    }],
-    "commands": {
-      "UnSetBold": {
-        "suggested_key": {
-          "default": "Alt+B"
-        },
-        "description": "Gives Goodnotes Web more Keyboard Shortcuts"
-      }
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "commands": {
+    "UnSetBold": {
+      "suggested_key": {
+        "default": "Alt+B"
+      },
+      "description": "Set text bold"
     },
-    "action": {
-      "default_popup": "popup/popup.html"
+    "UnSetItalic": {
+      "suggested_key": {
+        "default": "Alt+I"
+      },
+      "description": "Set text bold"
     },
-    "web_accessible_resources": [
-      {
-          "resources": ["images/*.jpeg"],
-          "matches": ["<all_urls>"]
-      }
-    ]
-  }
+    "UnSetUnderline": {
+      "suggested_key": {
+        "default": "Alt+U"
+      },
+      "description": "Set text bold"
+    }
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*.jpeg"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
