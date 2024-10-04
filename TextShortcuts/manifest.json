@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "version": "1.0",
-  "name": "Goodnotes Shortcuts",
-  "description": "Gives Goodnotes Web more Keyboard Shortcuts",
+  "name": "Goodnotes Text Shortcuts",
+  "description": "Gives Goodnotes Web Shortcuts for Text Tool",
   "permissions": [
     "activeTab",
     "scripting"
@@ -31,13 +31,19 @@
       "suggested_key": {
         "default": "Alt+I"
       },
-      "description": "Set text bold"
+      "description": "Set text italic"
     },
     "UnSetUnderline": {
       "suggested_key": {
         "default": "Alt+U"
       },
       "description": "Set text underlined"
+    },
+    "UnSetStrike": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Set text striked"
     }
   },
   "action": {

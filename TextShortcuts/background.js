@@ -30,6 +30,15 @@ chrome.commands.onCommand.addListener((command) => {
         function: UnSetUnderline
       });
     });
+  }else if (command === "UnSetStrike") {
+    console.log("Alt + S erfolgreich erkannt.");
+
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[0].id },
+        function: UnSetStrike
+      });
+    });
   }
 });
 
@@ -60,5 +69,15 @@ function UnSetUnderline() {
     console.log("Underline-Toggle ausgeführt.");
   } else {
     console.log("Underline nicht gefunden.");
+  }
+}
+
+function UnSetStrike() {
+  const buttonStrike = document.getElementById('textToolbarStrikeStyle');
+  if (buttonStrike) {
+    buttonStrike.click();
+    console.log("Strike-Toggle ausgeführt.");
+  } else {
+    console.log("Strike nicht gefunden.");
   }
 }
