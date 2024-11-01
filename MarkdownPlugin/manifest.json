@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Goodnotes Markdown Plugin",
+  "description": "Can import Markdown in Goodnotes",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "commands": {
+    "UnSetBold": {
+      "suggested_key": {
+        "default": "Alt+B"
+      },
+      "description": "Set text bold"
+    }
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*.jpeg"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
